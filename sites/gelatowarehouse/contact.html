@@ -4,50 +4,127 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | Gelato Warehouse</title>
-  <meta name="description" content="Contact Gelato Warehouse.">
+  <meta name="description" content="Contact Gelato Warehouse for orders, quotes and design/build projects.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
+  <div class="topbar">
     <div class="container">
-      <a class="logo" href="index.html">Gelato Warehouse</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="site-nav" id="site-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="flavors.html">Flavors</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
+      <span class="hours">Wholesale gelato supplies &amp; equipment</span>
+      <span class="contact-links">
+        <a href="tel:0000000000">&#9742; (000) 000-0000</a>
+        <a href="mailto:info@gelatowarehouse.com">&#9993; info@gelatowarehouse.com</a>
+      </span>
+    </div>
+  </div>
+
+  <header class="brand-row">
+    <div class="container">
+      <form class="search" role="search" action="shop.html">
+        <input type="search" name="q" placeholder="Search products" aria-label="Search products">
+        <button type="submit" aria-label="Search">&#128269;</button>
+      </form>
+      <a class="logo" href="index.html">
+        <span class="logo-mark">Gelato <span>Warehouse</span></span>
+        <span class="logo-tag">Supplies &middot; Equipment &middot; Displays</span>
+      </a>
+      <div class="account-links">
+        <a href="contact.html">Sign in</a>
+        <a href="contact.html">Cart <span class="cart-count">0</span></a>
+      </div>
     </div>
   </header>
 
+  <div class="main-nav-bar">
+    <div class="container">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop Supplies</a></li>
+            <li><a href="equipment.html">Equipment &amp; Displays</a></li>
+            <li><a href="design-build.html">Design / Build</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
   <main>
-    <section class="section">
+    <section class="page-header">
       <div class="container">
-        <h1>Contact</h1>
-        <p>Placeholder: phone, email, address and opening hours.</p>
+        <h1>Contact us</h1>
+        <p class="lead">Questions, quotes, or bulk orders: we're happy to help.</p>
       </div>
     </section>
 
-    <section class="section section-muted">
-      <div class="container">
-        <h2>Send us a message</h2>
-        <!-- TODO: point "action" at a form service (e.g. Formspree, Netlify Forms) once hosting is chosen. -->
-        <form class="form" action="#" method="post">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Message <textarea name="message" rows="5" required></textarea></label>
-          <button class="button" type="submit">Send</button>
-        </form>
+    <section class="section">
+      <div class="container split top">
+        <div class="contact-card">
+          <h2>Get in touch</h2>
+          <p><strong>Phone</strong> <a href="tel:0000000000">(000) 000-0000</a></p>
+          <p><strong>Email</strong> <a href="mailto:info@gelatowarehouse.com">info@gelatowarehouse.com</a></p>
+          <p><strong>Address</strong> Placeholder street, city, state ZIP</p>
+          <p><strong>Hours</strong> Placeholder: Mon&ndash;Fri, 9am&ndash;5pm</p>
+        </div>
+        <div>
+          <h2>Send us a message</h2>
+          <!-- TODO: point "action" at a form service (e.g. Formspree) once chosen. -->
+          <form class="form" action="#" method="post">
+            <label>Name <input type="text" name="name" required></label>
+            <label>Business name <input type="text" name="business"></label>
+            <label>Email <input type="email" name="email" required></label>
+            <label>I'm interested in
+              <select name="topic">
+                <option>Supplies order / quote</option>
+                <option>Equipment &amp; displays</option>
+                <option>Design / build project</option>
+                <option>Something else</option>
+              </select>
+            </label>
+            <label>Message <textarea name="message" rows="5" required></textarea></label>
+            <button class="button" type="submit">Send message</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span data-year></span> Gelato Warehouse &middot; gelatowarehouse.com</p>
+      <div class="footer-grid">
+        <div>
+          <h4>Gelato Warehouse</h4>
+          <p>Placeholder: one or two sentences about Gelato Warehouse and who you serve.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All supplies</a></li>
+            <li><a href="shop.html#cups-and-lids">Cups &amp; lids</a></li>
+            <li><a href="shop.html#spoons-and-spatulas">Spoons</a></li>
+            <li><a href="equipment.html">Equipment &amp; displays</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="design-build.html">Design / build</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="contact.html">Shipping &amp; returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Stay in the loop</h4>
+          <p>New products and seasonal offers, a few times a year.</p>
+          <!-- TODO: connect to an email service (e.g. Mailchimp) once chosen. -->
+          <form class="newsletter" action="#" method="post">
+            <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+            <button class="button" type="submit">Sign up</button>
+          </form>
+        </div>
+      </div>
+      <p class="footer-bottom">&copy; <span data-year></span> Gelato Warehouse &middot; gelatowarehouse.com</p>
     </div>
   </footer>
 

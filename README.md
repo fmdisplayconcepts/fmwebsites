@@ -47,7 +47,7 @@ Don't commit straight to `main`.
 
 | Site | Hosted on | Address |
 |---|---|---|
-| gelatowarehouse | GitHub Pages (this repo) | https://fmdisplayconcepts.github.io/fmwebsites/ |
+| gelatowarehouse (supplies & equipment store) | GitHub Pages (this repo) | https://fmdisplayconcepts.github.io/fmwebsites/ |
 
 `.github/workflows/deploy-gelatowarehouse.yml` republishes the site automatically whenever a change to `sites/gelatowarehouse/` is merged into `main`. Progress shows in the repo's **Actions** tab.
 
