@@ -42,3 +42,13 @@ Then edit `sites/new-site-name/index.html` (title, logo text, content) and the `
 4. Someone else reviews it, then it gets merged into `main`.
 
 Don't commit straight to `main`.
+
+## Hosting
+
+| Site | Hosted on | Address |
+|---|---|---|
+| gelatowarehouse | GitHub Pages (this repo) | https://fmdisplayconcepts.github.io/fmwebsites/ |
+
+`.github/workflows/deploy-gelatowarehouse.yml` republishes the site automatically whenever a change to `sites/gelatowarehouse/` is merged into `main`. Progress shows in the repo's **Actions** tab.
+
+GitHub Pages hosts only one site per repository, so other sites need a different host (for example Cloudflare Pages or Netlify) or their own repository.
