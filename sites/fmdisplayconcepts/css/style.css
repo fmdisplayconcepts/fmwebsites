@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Site styles
+   Change the values in :root to rebrand a site; the rest follows them.
+   ========================================================================== */
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f4;
+  --color-text: #1c1917;
+  --color-muted: #57534e;
+  --color-accent: #b45309;
+  --color-accent-text: #ffffff;
+  --color-border: #e7e5e4;
+
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-body);
+
+  --max-width: 1100px;
+  --radius: 8px;
+  --space: 1rem;
+}
+
+/* Reset ------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, ul, figure { margin: 0; }
+img { max-width: 100%; display: block; }
+
+/* Base ------------------------------------------------------------------- */
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+h1, h2, h3 { font-family: var(--font-heading); line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var(--space); }
+a { color: var(--color-accent); }
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* Header & nav ----------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4rem;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.7rem;
+  font: inherit;
+  cursor: pointer;
+}
+.site-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+.site-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--color-accent); }
+
+@media (max-width: 700px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .site-nav.is-open { display: block; }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+  }
+  .site-nav a { display: block; padding: 0.5rem 0; }
+}
+
+/* Sections --------------------------------------------------------------- */
+.hero {
+  padding: 5rem 0;
+  background: var(--color-surface);
+}
+.hero p {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  max-width: 40rem;
+  margin: 1rem 0 2rem;
+}
+.section { padding: 4rem 0; }
+.section-muted { background: var(--color-surface); }
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.card h3 { margin-bottom: 0.5rem; }
+.card p { color: var(--color-muted); }
+
+.button {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+}
+.button:hover { filter: brightness(1.1); }
+
+/* Forms ------------------------------------------------------------------ */
+.form { display: grid; gap: 1rem; max-width: 36rem; }
+.form label { display: grid; gap: 0.35rem; font-weight: 600; }
+.form input, .form textarea {
+  font: inherit;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.form button { justify-self: start; border: 0; cursor: pointer; font: inherit; }
+
+/* Footer ----------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
