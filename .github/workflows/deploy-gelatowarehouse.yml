@@ -28,6 +28,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # Cache-busting: add "?v=<commit>" to the CSS/JS links in the published
+      # copy, so visitors' browsers fetch the new files after every update
+      # instead of reusing old cached ones. Source files are left untouched.
+      - name: Version CSS and JS links
+        run: |
+          v="${GITHUB_SHA::7}"
+          find sites/gelatowarehouse -name '*.html' -exec \
+            sed -i -E "s#(href|src)=\"((css|js)/[^\"?]+\.(css|js))\"#\1=\"\2?v=${v}\"#g" {} +
+          grep -ho '\(href\|src\)="\(css\|js\)/[^"]*"' sites/gelatowarehouse/*.html | sort -u
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
